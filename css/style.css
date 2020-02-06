@@ -1,0 +1,40 @@
+h1 {
+    color: red;
+    text-align: center;
+}
+
+  #blue  {
+    background-color: #307DF7;
+    height: 100px;
+    width: 100px;
+}
+ #green   {
+    background-color: #53A451;
+    height: 100px;
+    width: 100px;
+}
+ #red   {
+    background-color: #CB444B;
+    height: 100px;
+    width: 100px;
+}
+ #aqua   {
+    background-color: #4AA0B5;
+    height: 100px;
+    width: 100px;
+}
+ #yellow   {
+    background-color: #F6C244;
+    height: 100px;
+    width: 100px;
+}
+
+
+
+ #playArea {
+    
+    margin:  auto;
+    height: 500px;
+    width: 800px;
+     border: 1px solid black; 
+ }
