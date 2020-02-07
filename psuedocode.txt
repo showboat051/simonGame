@@ -1,0 +1,46 @@
+Simon Game
+
+How the game will work.
+
+- Player will be presented with a gameboard consisting of 5 grid squares
+    - Each grid square will have a different color.
+- Play will be able click a button to make game start
+- Game will start at level one
+    - With level one, only one of the grid squares will flash
+    - Once the square flashes the player must click on it square to get a point.
+
+
+Program Pseudocode
+
+
+STATE
+
+Define Variables and Constants
+
+Variables
+    - winner - true/false
+    - level - max level is one 
+
+Constants
+    TBD
+
+
+Cache element references
+    - Store all the grid squares in a nodelist named gridSquareEls
+    - Start button element named start button
+    - Round display element named roundEl
+    - Message element named messageEl
+
+Event listeners
+    - Event listener for the start button
+    - Make the gameboard itself have an event listener
+
+Functions
+    - Init(); 
+        - Initialize state and create game enviroment
+    - handleStartGame();
+        - handleFlash();
+        - isMatch();
+        - winner();
+        - gameOver();
+        
