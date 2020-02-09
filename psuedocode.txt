@@ -38,8 +38,12 @@ Event listeners
 Functions
     - Init(); 
         - Initialize state and create game enviroment
+            - Level 1
+                -CPU Turn =0 followed by
+                -Player's turn = 0
     - handleStartGame();
         - handleFlash();
+            - to pick a random index to flash
         - isMatch();
         - winner();
         - gameOver();
