@@ -3,15 +3,10 @@ const squareEls = document.getElementsByClassName('piece');
 const start = document.getElementById('start');
 const round = document.getElementById('round');
 const message = document.getElementById('message');
-// const blue = document.getElementById('#blue');
-// const yellow = document.getElementById('#yellow');
-// const aqua = document.getElementById('#aqua');
-// const red = document.getElementById('red');
-// const green = document.getElementById('green');
 const square = ['#blue', '#yellow', '#aqua', '#red', '#green']
 
 /******* EVENT LISTENERS *******/
-document.getElementById('playArea').addEventListener('click', event);
+document.getElementById('playArea').addEventListener('click', handleFlash);
 document.getElementById('start').addEventListener('click', init);
 
 /******* FUNCTIONS *******/
@@ -27,26 +22,40 @@ function init() {
 
 function cpuTurn() {
   // cpu will grab a random color
-  handleFlash();
+  // handleFlash();
   // flash random color
   //  
 }
+    function randPiece(square) {
+     return square[Math.floor(Math.random() * square.length)];
+     }
+     console.log(randPiece(square));
+     
+      function handleFlash() { 
+       setTimeout(function(){
+         randPiece.style.filter = "brightness(50%)"; 
+       },200);
+       setInterval(function(){
+         randPiece.style.filter = "brightness(100%)"; 
+       },500);
 
-function playerTurn() {
-  // player's response must match CPU
-  // Check if player matched CPU
-  // IF not call game over and restart 
-}
+// function playerTurn() {
+//   // player's response must match CPU
+//   // Check if player matched CPU
+//   // IF not call game over and restart 
+// }
+
+      
+    }
+
+
+    
+  
+
+
+
+
+
+
 
   
-function handleFlash() {
-  let randPiece = Math.floor(Math.random() * square.length); 
-  var s = document.getElementById('playArea');
-  setTimeout(function(){
-    s.style.filter = "brightness(50%)"; 
-  },200);
-  setInterval(function() {
-    s.style.filter = "brightness(100%)";
-  },500);
-  
-}
