@@ -19,20 +19,24 @@ function init() {
     level: 1,
     order: [],
     playerOrder: [],
-    cpuOrder: []
+    cpuOrder: [],
+    count: []
   }
   cpuTurn();
-}
 
-function cpuTurn() {
-  // cpu will grab a random color
-  handleFlash();
-  // flash random color
-  //  
+  console.log(game)
 }
+ function cpuTurn() {
+  handleFlash()
+    game.cpuOrder.push() 
+  };
+  
 
-function handleClick() {
-  // allow user to make selection
+function handleClick(e) {
+  let playerChoice = e.target.id;
+  game.playerOrder.push(playerChoice);
+  // return document.querySelector(playerChoice);
+  console.log(playerChoice)
 }
 
 
@@ -40,6 +44,7 @@ function randPiece() {
   const randIdx = square[Math.floor(Math.random() * square.length)];
   game.order.push(randIdx)
   return document.querySelector(randIdx);
+  console.log(randPiece)
  }
 
 function handleFlash() { 
@@ -51,11 +56,6 @@ function handleFlash() {
          piece.style.filter = "brightness(100%)"; 
        },500);
 
-// function playerTurn() {
-//   // player's response must match CPU
-//   // Check if player matched CPU
-//   // IF not call game over and restart 
-// }
 
 }
 
