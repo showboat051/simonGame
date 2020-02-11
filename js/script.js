@@ -1,5 +1,5 @@
-/******* Constants and State Variable ********** */
-let game;
+  /******* Constants and State Variable ********** */
+let game, winner, level, clickCounter;
 
 
 /******* CACHED RESOURCES ********** */
@@ -16,37 +16,40 @@ document.getElementById('start').addEventListener('click', init);
 /******* FUNCTIONS *******/
 function init() {
   game = {
-    level: 1,
-    order: [],
     playerOrder: [],
     cpuOrder: [],
     count: []
   }
+  winner = false;
+  level = 3;
+  clickCounter = 0;
   cpuTurn();
-
-  console.log(game)
 }
- function cpuTurn() {
-  handleFlash()
-    game.cpuOrder.push() 
+function cpuTurn() {
+  let counter = level;
+  let timer = setInterval(function(){
+      if(counter === 0) return clearInterval(timer)
+      handleFlash()
+      counter--
+    },500)
   };
   
-
-function handleClick(e) {
+// Handles user on the playarea and start button clicks
+ function handleClick(e) {
   let playerChoice = e.target.id;
   game.playerOrder.push(playerChoice);
-  // return document.querySelector(playerChoice);
-  console.log(playerChoice)
+  clickCounter++
+  if(clickCounter === level) {
+    winner = handleCheckWinner();
+  }
 }
-
-
+// Picks a random piece
 function randPiece() {
   const randIdx = square[Math.floor(Math.random() * square.length)];
-  game.order.push(randIdx)
+  game.cpuOrder.push(randIdx.replace('#', ''))
   return document.querySelector(randIdx);
-  console.log(randPiece)
  }
-
+// Flashes the random piece
 function handleFlash() { 
   let piece = randPiece()
        setTimeout(function(){
@@ -55,13 +58,34 @@ function handleFlash() {
        setInterval(function(){
          piece.style.filter = "brightness(100%)"; 
        },500);
+}
+// Runs after a win
+function handleCheckWinner() {
+  // document.getElementById('message') = "You Win!"
+  if(game.cpuOrder.join("") === game.playerOrder.join("")) {
+    console.log('winner')
+    return true
+  } else {
+    console.log('that was not a match')
+    return false;
+  }
+}
 
-
+ function checkResults () {
+  if (playerChoice === cpuOrder) {
+    winner(); 
+  } else if (playerChoice !== cpuOrder) {
+    document.getElementById('message') = "You LOSE!!"; init();
+  } else {
+    return winner = null
+  }
 }
 
 
     
   
+
+
 
 
 
