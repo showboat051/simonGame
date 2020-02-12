@@ -11,9 +11,12 @@ const square = ['#blue', '#yellow', '#aqua', '#red', '#green']
 
 /******* EVENT LISTENERS *******/
 document.getElementById('playArea').addEventListener('click', handleClick);
-document.getElementById('start').addEventListener('click', init);
+document.getElementById('start').addEventListener('click', startRound);
 
 /******* FUNCTIONS *******/
+
+init();
+
 function init() {
   game = {
     playerOrder: [],
@@ -21,10 +24,14 @@ function init() {
     count: []
   }
   winner = false;
-  level = 3;
+  level = 1;
   clickCounter = 0;
+}
+
+function startRound() {
   cpuTurn();
 }
+
 function cpuTurn() {
   let counter = level;
   let timer = setInterval(function(){
@@ -60,26 +67,30 @@ function handleFlash() {
        },500);
 }
 // Runs after a win
-function handleCheckWinner() {
-  // document.getElementById('message') = "You Win!"
+ function handleCheckWinner() {
   if(game.cpuOrder.join("") === game.playerOrder.join("")) {
-    console.log('winner')
-    return true
+    level++;
+    clickCounter = 0;
+    alert('Winner')
+    cpuTurn();
+    return true;
   } else {
-    console.log('that was not a match')
+    alert('That Was not A Match');
+    clickCounter = 0;
+    level = 1;
     return false;
   }
 }
 
- function checkResults () {
-  if (playerChoice === cpuOrder) {
-    winner(); 
-  } else if (playerChoice !== cpuOrder) {
-    document.getElementById('message') = "You LOSE!!"; init();
-  } else {
-    return winner = null
-  }
-}
+//  function checkResults () {
+//   if (playerChoice === cpuOrder) {
+//     winner(); 
+//   } else if (playerChoice !== cpuOrder) {
+//     document.getElementById('message') = "You LOSE!!"; init();
+//   } else {
+//     return winner = null
+//   }
+// }
 
 
     
