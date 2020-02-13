@@ -4,37 +4,61 @@ h1 {
 }
 
   #blue  {
+    /* position: relative; */
     background-color: #307DF7;
     height: 100px;
     width: 100px;
 }
  #green   {
+    position: relative;
+    left: 75%;
     background-color: #53A451;
     height: 100px;
     width: 100px;
 }
  #red   {
     background-color: #CB444B;
+     position: relative;
+    left: 40%;
+    top: 80px; 
     height: 100px;
     width: 100px;
 }
  #aqua   {
-    background-color: #4AA0B5;
-    height: 100px;
-    width: 100px;
-}
- #yellow   {
+     /* margin-left: 85px;  */
+      position: relative; 
+      top: 190px;
+     background-color: #4AA0B5;
+     height: 100px;
+     width: 100px;
+    }
+#yellow   {
+     position: relative; 
+    top: 190px;
+    left: 75%;
+     /* margin-left: 300px;  */
     background-color: #F6C244;
     height: 100px;
     width: 100px;
 }
 
+#start{
+    position: relative;
+    margin: 0 auto;
+
+}
+
 
 
  #playArea {
-    
+    background-color: black;
     margin:  auto;
     height: 500px;
     width: 800px;
      border: 1px solid black; 
  }
+
+ body {
+     background-color: black;
+ }
+ 

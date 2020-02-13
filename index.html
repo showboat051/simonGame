@@ -6,25 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SIMON</title>
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script defer src="./js/script.js"></script>
 </head>
 <body>
-    <h1>SIMON GAME</h1>
+    <div class="jumbotron">
+        <h1>SIMON </h1>
+        <p>Click Start to Begin</p>
+        <button id="start">Start Here</button>
+      </div>
 
     <h3 id="winLoss"></h3>
-        <button id="start">Start Here</button>
-        <span id="round"></span>
+        <span id="round">Round </span>
     <div id="playArea">
-        
-        <button id="blue" data-index="0"  class="piece"></button>
-        <button id="green" data-index="1" class="piece"></button>
-        <button id="red"data-index="2"  class="piece"></button>
-        <button id="aqua" data-index="3" class="piece"></button>
-        <button id="yellow"data-index="4"  class="piece"></button>
+        <div class="top-container">
+            <button id="blue" data-index="0"  class="piece"></button>
+            <button id="green" data-index="1" class="piece"></button>
+        </div>
+        <div class="center-container">
+            <button id="red"data-index="2"  class="piece"></button>
+
+        </div>  
+        <div class="bottom-container">
+            <button id="aqua" data-index="3" class="piece"></button>
+            <button id="yellow"data-index="4"  class="piece"></button>
+
+        </div>
+
         
 
     </div> 
-    <p id="message"> Click start To begin</p>
             </body>
 </html>

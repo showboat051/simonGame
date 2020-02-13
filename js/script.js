@@ -6,7 +6,7 @@ let game, winner, level, clickCounter;
 const squareEls = document.getElementsByClassName('piece');
 const start = document.getElementById('start');
 const round = document.getElementById('round');
-const message = document.getElementById('message');
+const message = document.getElementById('winLoss');
 const square = ['#blue', '#yellow', '#aqua', '#red', '#green']
 
 /******* EVENT LISTENERS *******/
@@ -26,6 +26,7 @@ function init() {
   winner = false;
   level = 1;
   clickCounter = 0;
+  render();
 }
 
 function startRound() {
@@ -73,25 +74,20 @@ function handleFlash() {
     clickCounter = 0;
     alert('Winner')
     cpuTurn();
+    render();
     return true;
   } else {
     alert('That Was not A Match');
+    init();
     clickCounter = 0;
     level = 1;
     return false;
   }
 }
 
-//  function checkResults () {
-//   if (playerChoice === cpuOrder) {
-//     winner(); 
-//   } else if (playerChoice !== cpuOrder) {
-//     document.getElementById('message') = "You LOSE!!"; init();
-//   } else {
-//     return winner = null
-//   }
-// }
-
+function render () { 
+    round.textContent = `Round ${level}`
+}
 
     
   
