@@ -72,12 +72,12 @@ function handleFlash() {
   if(game.cpuOrder.join("") === game.playerOrder.join("")) {
     level++;
     clickCounter = 0;
-    alert('Winner')
+    message.textContent = "Winner";
     cpuTurn();
     render();
     return true;
   } else {
-    alert('That Was not A Match');
+    message.textContent = "That was NOT a match, press start to begin ";
     init();
     clickCounter = 0;
     level = 1;
