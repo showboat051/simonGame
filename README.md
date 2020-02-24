@@ -11,7 +11,7 @@
 * CSS 
 * Javascript
 * Bootstrap
-[Sketch of game] (../simonSketch.jpeg)
+![Sketch of game](../simonSketch.jpeg)
 
 
 
@@ -23,9 +23,9 @@
 
 
 # Getting Started
-You can play the game [here] (https://showboat051.github.io/simonGame/)
+You can play the game [here](https://showboat051.github.io/simonGame/)
 
-[Sketch of game] (../gameShot.png)
+![Sketch of game](../gameShot.png)
 
 
 # In Future Updates:
